@@ -1,80 +1,213 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
+      rel="stylesheet"
+    />
     <title>Document</title>
     <style>
-        * {
-            margin: 0;
-            ;
-            padding: 0;
-            box-sizing: border-box;
-        }
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
 
-        .mheader {
-            width: 100vw;
-            height: 100vh;
-            background-color: hsl(0, 0, 94%);
-   
-            display: grid;
-           place-content: center;
-        }
+      .mheader {
+        display: flex;
 
-        .cheader {
-            width: 50vw;
-            height: 40vh;
-            color: #000;
-            text-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
-            font-size: 2rem;
-            font-family: 'Satisfy', cursive;
-            font-weight: bold;
-            display: flex;
-            justify-content: center;
-            flex-direction: column;
-            text-align: center;
-        }
-        .btn{
-            margin: 10px;
-            margin-left: 300px;
-            width: 200px;
-            padding: 15px;
-            font-size: 25px;
-            border-radius: 10px;
-            background-color: yellow;
-            font-family: 'Satisfy', cursive;
-            cursor: pointer;
+       justify-content: center;
+       align-items: center;
+       text-indent: 2px;
+      
+       flex-direction: column;
+        
+        background-color: hsl(0, 0, 94%);
 
+        
+    
+      }
+      h1.holi{
+        color: black;
+        text-align: center;
+        margin-right: 200px;
+      }
+
+      .cheader {
+        width: 50vw;
+        height: 40vh;
+        /* color: #000; */
+        text-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
+        font-size: 2rem;
+        font-family: "Satisfy", cursive;
+        font-weight: bold;
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+      }
+      .btn {
+        margin: 10px;
+        margin-left: 300px;
+        width: 200px;
+        padding: 15px;
+        font-size: 25px;
+        border-radius: 10px;
+        background-color: yellow;
+        font-family: "Satisfy", cursive;
+        cursor: pointer;
+      }
+      :root {
+        --bg-color: hsl(49 37% 94%);
+        --typewriterSpeed: 6s;
+        --typewriterCharacters: 24;
+      }
+
+      body {
+        margin: 0;
+        font-family: "Source Sans Pro", sans-serif;
+        min-height: 100vh;
+        display: grid;
+        place-content: center;
+        text-align: center;
+        background: var(--bg-color);
+      }
+
+      p {
+        font-size: clamp(1rem, 3vw + 1rem, 4rem);
+        position: relative;
+        font-family: "Source Code Pro", monospace;
+        position: relative;
+        width: max-content;
+      }
+
+      p::before,
+      p::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+      }
+
+      p::before {
+        background: var(--bg-color);
+        animation: typewriter var(--typewriterSpeed)
+          steps(var(--typewriterCharacters)) 1s forwards;
+      }
+
+      p::after {
+        width: 0.125em;
+        /* background: black; */
+        animation: typewriter var(--typewriterSpeed)
+            steps(var(--typewriterCharacters)) 1s forwards,
+          blink 750ms steps(var(--typewriterCharacters)) infinite;
+      }
+
+      @keyframes typewriter {
+        to {
+          left: 100%;
         }
+      }
+
+      @keyframes blink {
+        to {
+          background: transparent;
+        }
+      }
+
+      @keyframes fadeInUp {
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      #gh-link {
+        position: absolute;
+        bottom: 2em;
+        width: 100%;
+        /* color: hsl(0 0 0 / 0.7); */
+      }
+      #paralop{
+        font-size: larger;
+        width: 800px;
+        text-align: center;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+      }
+      
     </style>
-</head>
+  </head>
 
-<body>
-    <div class="mheader">
-        <div class="cheader">
-            <p>
-                
-                🥳Love you all Guys!🥳
+  <body>
+    <div class="mheader" >
+      <div class="cheader">
+        <h1 class="holi">Hello, my name is Anish.</h1>
 
-            </p>
-            <div id="anish"></div>
-            <button class="btn" onclick="">Lets Celebrate --></button>
-        </div>
+        <!-- <a
+          class="holi"
+          href="https://github.com/anish-acharya123"
+          id="gh-link"
+          target="_blank"
+          >See how I created this over on Github</a
+        > -->
+        
+
+        
+        <div id="anish"></div>
+        <p class="holi">🥳Love you all Guys!🥳</p>
+        <button class="btn" id="btn-prime" onclick="handleOnClick()">
+          Lets Celebrate -->
+        </button>
+      </div>
     </div>
 
     <script>
-     const onclick =()=>{
-        const para =  document.createElement("para");
-        para.innerText = "This is a paragraph";
+      const handleOnClick = () => {
+       
+          console.log("I am working");
+        const para = document.createElement("p");
+        para.setAttribute("id", "paralop");
+        para.innerText = "May the spirit of Holi bring you happiness. The warmth of Holi brings you joy, and the joy of Holi brings you hope. I wish you a joyous Holi!";
         document.getElementById("anish").appendChild(para);
-     }
-     
-    </script>
-</body>
 
+        const HOLI = document.querySelector(".holi");
+        // const colors = [
+        //   "red ",
+        //   "blue",
+        //   "green",
+        //   "pink",
+        //   "indigo",
+        //   "purple",
+        //   "tomato",
+        //   "orange",
+        //   "violet",
+        // ];
+        const colors = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
+		  '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
+		  '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A', 
+		  '#FF99E6', '#CCFF1A', '#FF1A66', '#E6331A', '#33FFCC',
+		  '#66994D', '#B366CC', '#4D8000', '#B33300', '#CC80CC', 
+		  '#66664D', '#991AFF', '#E666FF', '#4DB3FF', '#1AB399',
+		  '#E666B3', '#33991A', '#CC9999', '#B3B31A', '#00E680', 
+		  '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
+		  '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3', 
+		  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
+
+
+        setInterval(() => {
+          let randomnumber = Math.floor(Math.random() * colors.length);
+          document.body.style.color = colors[randomnumber];
+        }, 1000);
+      };
+    </script>
+  </body>
 </html>
