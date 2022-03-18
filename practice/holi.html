@@ -6,10 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+
     <link
       href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap"
       rel="stylesheet"
     />
+
     <title>Document</title>
     <style>
       * {
@@ -20,27 +22,26 @@
 
       .mheader {
         display: flex;
+        border: 2px solid red;
+        width: 1500px;
+        height: 800px;
+        justify-content: center;
+        align-items: center;
+        text-indent: 2px;
 
-       justify-content: center;
-       align-items: center;
-       text-indent: 2px;
-      
-       flex-direction: column;
-        
+        flex-direction: column;
+
         background-color: hsl(0, 0, 94%);
-
-        
-    
       }
-      h1.holi{
+      h1.holi {
         color: black;
         text-align: center;
-        margin-right: 200px;
       }
 
       .cheader {
-        width: 50vw;
-        height: 40vh;
+        border: 2px solid black;
+        width: 100%;
+        height: 100%;
         /* color: #000; */
         text-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
         font-size: 2rem;
@@ -48,12 +49,12 @@
         font-weight: bold;
         display: flex;
         justify-content: center;
+        align-items: center;
         flex-direction: column;
         text-align: center;
       }
       .btn {
         margin: 10px;
-        margin-left: 300px;
         width: 200px;
         padding: 15px;
         font-size: 25px;
@@ -104,7 +105,7 @@
 
       p::after {
         width: 0.125em;
-        /* background: black; */
+        background: black;
         animation: typewriter var(--typewriterSpeed)
             steps(var(--typewriterCharacters)) 1s forwards,
           blink 750ms steps(var(--typewriterCharacters)) infinite;
@@ -130,12 +131,10 @@
       }
 
       #gh-link {
-        position: absolute;
-        bottom: 2em;
         width: 100%;
-        /* color: hsl(0 0 0 / 0.7); */
+        color: hsl(0 0 0 / 0.7);
       }
-      #paralop{
+      #paralop {
         font-size: larger;
         width: 800px;
         text-align: center;
@@ -143,25 +142,22 @@
         align-items: center;
         justify-content: center;
       }
-      
     </style>
   </head>
 
   <body>
-    <div class="mheader" >
+    <div class="mheader">
       <div class="cheader">
         <h1 class="holi">Hello, my name is Anish.</h1>
 
-        <!-- <a
+        <a
           class="holi"
           href="https://github.com/anish-acharya123"
           id="gh-link"
           target="_blank"
           >See how I created this over on Github</a
-        > -->
-        
+        >
 
-        
         <div id="anish"></div>
         <p class="holi">🥳Love you all Guys!🥳</p>
         <button class="btn" id="btn-prime" onclick="handleOnClick()">
@@ -171,13 +167,24 @@
     </div>
 
     <script>
+      let flag = 1;
       const handleOnClick = () => {
-       
-          console.log("I am working");
-        const para = document.createElement("p");
-        para.setAttribute("id", "paralop");
-        para.innerText = "May the spirit of Holi bring you happiness. The warmth of Holi brings you joy, and the joy of Holi brings you hope. I wish you a joyous Holi!";
-        document.getElementById("anish").appendChild(para);
+        console.log("I clicked it");
+        console.log(flag);
+        if (flag == 1) {
+          let para = document.createElement("p");
+          para.setAttribute("id", "paralop");
+          para.innerText =
+            "May the spirit of Holi bring you happiness. The warmth of Holi brings you joy, and the joy of Holi brings you hope. I wish you a joyous Holi!";
+          document.getElementById("anish").appendChild(para);
+          let paraelem = document.getElementById("paralop");
+          paraelem.style.display = "block";
+          flag = 0;
+        } else {
+          let paraelem = document.getElementById("paralop");
+          paraelem.remove();
+          flag = 1;
+        }
 
         const HOLI = document.querySelector(".holi");
         // const colors = [
@@ -191,17 +198,58 @@
         //   "orange",
         //   "violet",
         // ];
-        const colors = ['#FF6633', '#FFB399', '#FF33FF', '#FFFF99', '#00B3E6', 
-		  '#E6B333', '#3366E6', '#999966', '#99FF99', '#B34D4D',
-		  '#80B300', '#809900', '#E6B3B3', '#6680B3', '#66991A', 
-		  '#FF99E6', '#CCFF1A', '#FF1A66', '#E6331A', '#33FFCC',
-		  '#66994D', '#B366CC', '#4D8000', '#B33300', '#CC80CC', 
-		  '#66664D', '#991AFF', '#E666FF', '#4DB3FF', '#1AB399',
-		  '#E666B3', '#33991A', '#CC9999', '#B3B31A', '#00E680', 
-		  '#4D8066', '#809980', '#E6FF80', '#1AFF33', '#999933',
-		  '#FF3380', '#CCCC00', '#66E64D', '#4D80CC', '#9900B3', 
-		  '#E64D66', '#4DB380', '#FF4D4D', '#99E6E6', '#6666FF'];
-
+        const colors = [
+          "#FF6633",
+          "#FFB399",
+          "#FF33FF",
+          "#FFFF99",
+          "#00B3E6",
+          "#E6B333",
+          "#3366E6",
+          "#999966",
+          "#99FF99",
+          "#B34D4D",
+          "#80B300",
+          "#809900",
+          "#E6B3B3",
+          "#6680B3",
+          "#66991A",
+          "#FF99E6",
+          "#CCFF1A",
+          "#FF1A66",
+          "#E6331A",
+          "#33FFCC",
+          "#66994D",
+          "#B366CC",
+          "#4D8000",
+          "#B33300",
+          "#CC80CC",
+          "#66664D",
+          "#991AFF",
+          "#E666FF",
+          "#4DB3FF",
+          "#1AB399",
+          "#E666B3",
+          "#33991A",
+          "#CC9999",
+          "#B3B31A",
+          "#00E680",
+          "#4D8066",
+          "#809980",
+          "#E6FF80",
+          "#1AFF33",
+          "#999933",
+          "#FF3380",
+          "#CCCC00",
+          "#66E64D",
+          "#4D80CC",
+          "#9900B3",
+          "#E64D66",
+          "#4DB380",
+          "#FF4D4D",
+          "#99E6E6",
+          "#6666FF",
+        ];
 
         setInterval(() => {
           let randomnumber = Math.floor(Math.random() * colors.length);

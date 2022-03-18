@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+
+    <h1>Hello My name is sarad</h1>
+
+    <p id="para">Lorem ipsum dolor sit amet consectetur adipisicing elit. Animi, deleniti.</p>
+
+    <button class="btn" onclick="handleOnClick()"> Show/Hide </button>
+
+
+    <script>
+let flag = 0;
+function handleOnClick(){
+
+    console.log("I clicked it")
+    console.log(flag)
+    if (flag==0)
+    {
+        let para = document.getElementById("para")
+        para.style.display = "none"
+        flag=1;
+    }
+    else{
+        para.style.display= "block"
+        flag = 0;
+    }
+
+
+
+}
+    </script>
+</body>
+</html>
