@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Satisfy&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        * {
+            margin: 0;
+            ;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        .mheader {
+            width: 100vw;
+            height: 100vh;
+            background-color: hsl(0, 0, 94%);
+   
+            display: grid;
+           place-content: center;
+        }
+
+        .cheader {
+            width: 50vw;
+            height: 40vh;
+            color: #000;
+            text-shadow: 0 0 2rem rgba(0, 0, 0, 0.5);
+            font-size: 2rem;
+            font-family: 'Satisfy', cursive;
+            font-weight: bold;
+            display: flex;
+            justify-content: center;
+            flex-direction: column;
+            text-align: center;
+        }
+        .btn{
+            margin: 10px;
+            margin-left: 300px;
+            width: 200px;
+            padding: 15px;
+            font-size: 25px;
+            border-radius: 10px;
+            background-color: yellow;
+            font-family: 'Satisfy', cursive;
+            cursor: pointer;
+
+        }
+    </style>
+</head>
+
+<body>
+    <div class="mheader">
+        <div class="cheader">
+            <p>
+                
+                🥳Love you all Guys!🥳
+
+            </p>
+            <div id="anish"></div>
+            <button class="btn" onclick="">Lets Celebrate --></button>
+        </div>
+    </div>
+
+    <script>
+     const onclick =()=>{
+        const para =  document.createElement("para");
+        para.innerText = "This is a paragraph";
+        document.getElementById("anish").appendChild(para);
+     }
+     
+    </script>
+</body>
+
+</html>
